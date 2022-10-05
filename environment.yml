@@ -1,0 +1,15 @@
+name: uttermon
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - setuptools
+  - pip=20.3
+  - numpy=1.19.2
+  - pytorch=1.11.0 # this should override the cpu-only whisper torch package with a cuda version
+  - pip:
+    - -e .
+    - git+https://github.com/openai/whisper.git
+    - sounddevice==0.4.5
+    - webrtcvad==2.0.10
